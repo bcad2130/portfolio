@@ -37,14 +37,19 @@ nav a {
   text-underline-offset: 2px;
 }
 
+nav a.active {
+  background-color: #E0FFFF;      
+  box-shadow: 0.2em -0.2em 10px #303030, 0 0.2em #FFFFFF;
+}
+
 section {
   display: grid;
-  grid-template-columns: 4fr 5fr 2fr 0fr 0fr 0fr;
+  grid-template-columns: 2.5fr 2fr 1fr 1fr;
   gap: 0;
 
   width: 100%;
 
-  cursor: e-resize;
+  /*cursor: e-resize;*/
 
   padding: 1rem 0.5rem;
 
@@ -60,6 +65,10 @@ section div {
 
 section div.hide {
   opacity: 0;
+}
+
+div.about_me {
+  padding: 2rem;
 }
 
 img {

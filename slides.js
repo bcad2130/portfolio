@@ -1,18 +1,20 @@
+const body = document.querySelector('body')
 const section = document.querySelector('section')
 const slides = section.querySelectorAll('div')
 
+
 let index = 0
+let waitTime = 4000
 
 let pattern = [
-  [4, 5, 2, 0, 0, 0],
-  [4, 5, 2, 2, 0, 0],
-  [0, 3, 2, 3, 0, 0],
-  [0, 2, 1, 2, 1, 0],
-  [0, 0, 2, 4, 3, 2],
-  [0, 0, 0, 1, 1, 1],
+  [2.5, 2, 1, 1],
+  [9, 2, 1, 1],
+  [3, 7, 1, 1],
+  [2, 2, 3.5, 1],
+  [1.5, 1.5, 1, 2.25],
 ]
 
-let timeout
+let timeout = null
 
 const nextSlide = () => {
   index += 1
@@ -33,9 +35,7 @@ const nextSlide = () => {
   })
 
   clearTimeout(timeout)
-  timeout = setTimeout(nextSlide, 2000)
+  timeout = setTimeout(nextSlide, waitTime)
 }
 
-section.addEventListener('click', nextSlide)
-
-timeout = setTimeout(nextSlide, 2000)
+timeout = setTimeout(nextSlide, waitTime)
